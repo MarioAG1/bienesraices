@@ -1,0 +1,79 @@
+.seccion-inferior {
+    @include tablet {
+        display: grid;
+        grid-template-columns: 2fr 1fr; //Nuestro blog | testamentos
+        gap: 2rem;
+    }
+}
+.entrada-blog {
+    margin-bottom: 2rem;
+
+    @include tablet {
+        display: grid;
+        grid-template-columns: 1fr 2fr; //Imagen | Informacion Blog
+        gap: 2rem;
+    }
+    &:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+.texto-entrada {
+    a {
+        color: $negro;
+        margin-top: 2rem;
+        display: block; //Si no funciona los margin
+    }
+    @include tablet {
+        a {
+            color: $negro;
+            margin-top: 0rem;
+            display: block; //Si no funciona los margin
+        }
+    }
+    h4 {
+        margin: 0;
+        line-height: 1.4;
+        &::after {
+            content: "";
+            display: block;
+            width: 15rem;
+            height: 0.5rem;
+            background-color: $verde;
+            margin-top: 0.5rem;
+        }
+    }
+}
+.informacion-meta {
+    span {
+        color: $naranja;
+    }
+}
+
+.testimonial {
+    background-color: $verde;
+    font-size: 2.4rem;
+    align-items: center;
+    padding: 2rem;
+    color: $blanco;
+    border-radius: 2rem;
+    p {
+        text-align: right;
+        color: $negro;
+    }
+    blockquote {
+        padding-left: 5rem;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            background-image: url(../img/comilla.svg);
+            background-repeat: no-repeat;
+            width: 6rem;
+            height: 8rem;
+            left: -2rem;
+        }
+    }
+}
